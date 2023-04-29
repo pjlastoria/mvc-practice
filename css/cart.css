@@ -1,0 +1,156 @@
+.cart-section {
+    display: flex;
+    gap: 40px;
+    background-color: var(--color-bg);
+}
+
+.cart-container {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.summary-container {
+    flex: 1 0 400px;
+}
+
+.cart-items > li, .summary {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 0 rgb(0,0,0,0.4);
+}
+
+#empty-cart {
+    text-align: center;
+}
+
+.cart-items li {
+    margin-bottom: 20px;
+}
+
+.item-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.product-medium-image {
+    border-radius: 7px;
+    width: 150px;
+    height: 150px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info li {
+    margin: 5px;
+}
+
+.item-brand {
+    opacity: 0.3;
+    font-size: 14px;
+}
+
+.item-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.item-condition {
+    opacity: 0.3;
+    font-size: 14px;
+}
+
+.item-price {
+    font-size: 16px;
+    font-weight: 300;
+    padding-top: 10px;
+}
+
+.item-qty-ctrl {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-qty-ctrl select, .item-qty-ctrl button {
+    height: 45px;
+}
+
+.item-qty-ctrl select {
+    padding: 0 4px 0 16px;
+}
+
+.item-protection {
+    margin-top: 30px;
+}
+
+.item-protection div {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 20px;
+    
+}
+
+.item-protection div label {
+    position: relative;
+    top: -3px;
+}
+
+#protection-plan {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.protection-list li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+
+.summary {
+    width: 360px;
+    height: calc(100vh - 250px);
+    text-align: center;
+    position: fixed;
+}
+
+.summary-items {
+    margin: 0;
+    max-height: 335px;
+    overflow-x: auto;
+}
+
+.summary-items > li, .item-info > li {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.item-container {
+    border-bottom: solid 2px var(--color-bg);
+    padding: 15px 0;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.subtotal-wrapper, .total-container {
+    border-bottom: solid 1px var(--color-bg);
+    padding: 15px 0;
+}
+
+.item-info-name {
+    float: left;
+}
+
+.summary-btn {
+    margin-top: 15px;
+    width: 100%;
+}

@@ -1,0 +1,147 @@
+.new-arrivals {
+    margin-top: 40px;
+}
+
+.new-arrivals-header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    
+}
+
+.new-arrivals h2 {
+    font-weight: 500;
+}
+
+.top-divider {
+    border-bottom: solid 2px var(--color-bg);
+    flex-grow: 1;
+}
+
+.carousel-arrows {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.carousel-arrows img {
+    width: 25px;
+    height: 25px;
+}
+
+.carousel-arrows img:hover {
+    cursor: pointer;
+    opacity: 0.2;
+}
+
+.inactive {
+    opacity: 0.2;
+}
+
+/* CAROUSEL */
+
+.carousel {
+    overflow: hidden;
+    padding: 30px 3px;
+}
+
+.card-wrapper {
+    display: flex;
+    position: relative;
+    width: 200%;
+    gap: 10px;
+}
+
+.carousel-card {
+    width: 40%;
+    height: 350px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.carousel-card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px 0 rgb(0,0,0,0.4);
+}
+
+.carousel-img {
+    height: 200px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel-img img {
+    border-radius: 5px 5px 0 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.add-to-wishlist, .remove-from-wishlist {
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-bg);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    text-align: center;
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.add-to-wishlist:hover {
+    background-color: var(--color-complimentary);
+}
+
+.add-to-wishlist img, .remove-from-wishlist img {
+    width: 25px;
+    height: 25px;
+    top: 8px;
+    position: relative;
+}
+
+.carousel-text {
+    text-align: center;
+    font-weight: 100;
+    padding-top: 10px;
+}
+
+.carousel-text li {
+    margin-top: 5px;
+}
+
+.product-brand {
+    opacity: 0.3;
+    font-size: 14px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.old-price {
+    opacity: 0.3;
+    font-size: 14px;
+    text-decoration-line: line-through;
+    font-weight: 100;
+    margin-right: 10px;
+}
+
+.carousel-btn {
+    position: relative;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px 0 rgb(0,0,0,0.4);
+    transition: 0.4s;
+    opacity: 0;
+}
+
+.carousel-card:hover .carousel-btn, .carousel-card:hover .add-to-wishlist {
+    opacity: 1;
+}

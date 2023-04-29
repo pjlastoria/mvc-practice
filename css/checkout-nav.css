@@ -1,0 +1,26 @@
+.checkout-progress {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.checkout-progress a, .checkout-progress a:visited {
+    color: inherit;
+}
+
+.checkout-progress > .active {
+    color: var(--color-complimentary);
+    opacity: 1;
+}
+
+.active ~ li {
+    opacity: 0.8;
+}
+
+.checkout-progress img {
+    width: 20px;
+    height: 20px;
+}

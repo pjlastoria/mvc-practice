@@ -1,0 +1,43 @@
+.account-verify-section {
+    display: flex;
+    gap: 40px;
+    background-color: var(--color-bg);
+    height: 100vh;
+}
+
+.account-container {
+    margin: 0 auto;
+    width: 500px;
+    height: 100%;
+    position: relative;
+}
+
+.account-heading {
+    text-align: center;
+}
+
+.login-form {
+    width: calc(100% -  40px);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 0 rgb(0,0,0,0.4);
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+}
+
+.input-row input[type=submit] {
+    display: block;
+    border: none;
+    height: 40px;
+    cursor: pointer;
+}
+
+.create-account-link {
+    text-align: center;
+}
+
+.create-account-link a:visited {
+    color: var(--color-complimentary);
+}
