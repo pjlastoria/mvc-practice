@@ -4,14 +4,40 @@ let addToCartBtns = document.getElementsByClassName('add-to-cart');
 addToCartBtns = [].slice.call(addToCartBtns);
 
 let sideCartList = document.getElementsByClassName('side-cart-items')[0];
+let cartQtyIcon = document.getElementsByClassName('cart-qty')[0];
+
+state['cartQty'] = sideCartList.children.length;
 
 addToCartBtns.forEach(btn => {
-    btn.addEventListener('click', ajaxAddProductToCart)
+    btn.addEventListener('click', showSpinner);
 });
 
-function ajaxAddProductToCart(e) {
+function showCartQty() {
+    cartQtyIcon.innerHTML = ++state['cartQty'];
+    cartQtyIcon.classList.remove("hidden"); 
+}
 
-    let productID = e.target.id;
+function showSpinner(e) {
+    this.disabled = 'true';
+    let btnTxt = this.children[1];
+    let spinner = this.children[0];
+    spinner.style.display = 'block';
+    btnTxt.style.display = 'none';
+    ajaxAddProductToCart(this);
+}
+
+function hideSpinner(ele) {
+    setTimeout(() => {
+        ele.children[0].style.display = '';
+        ele.children[1].style.display = '';
+        ele.disabled = '';
+        showCartQty();
+    }, 2000);
+}
+
+function ajaxAddProductToCart(ele) {
+    
+    let productID = ele.id;
     let params = 'new=1&' + 'product_id=' + productID;
     let productJson;
 
@@ -23,11 +49,11 @@ function ajaxAddProductToCart(e) {
         if(xhr.readyState == 4 && xhr.status == 200) {
             productJson = JSON.parse(xhr.responseText);
             createCartView(productJson);
+            hideSpinner(ele);
         }
     }
 
     xhr.send(params);
-
 }
 
 /**ADD PROUDCT TO WISHLIST**/
@@ -35,9 +61,20 @@ function ajaxAddProductToCart(e) {
 let addToWishListBtns = document.getElementsByClassName('add-to-wishlist');
 addToWishListBtns = [].slice.call(addToWishListBtns);
 
+let wishQtyIcon = document.getElementsByClassName('wish-qty')[0];
+
+if(wishQtyIcon) {
+    state['wishQty'] = parseInt(wishQtyIcon.innerText);
+}
+
 addToWishListBtns.forEach(btn => {
     btn.addEventListener('click', ajaxAddProductToWishList);
 });
+
+function showWishQty() {
+    wishQtyIcon.innerText = ++state['wishQty'];
+    wishQtyIcon.classList.remove("hidden"); 
+}
 
 function ajaxAddProductToWishList(e) {
 
@@ -57,7 +94,9 @@ function ajaxAddProductToWishList(e) {
                 return;
             };
 
-            if(productJson['msg']) flashWishMsg(productJson['msg']);
+            if(productJson['msg']) return flashWishMsg(productJson['msg']);
+            state['WishQty']++;
+            showWishQty();
         }
     }
 
