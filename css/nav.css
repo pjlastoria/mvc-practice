@@ -115,9 +115,10 @@
 .wish-list, .nav-cart, .top-icon {
     position: relative;
     cursor: pointer;
+    color: black;
 }
 
-.nav-hover:hover .nav-qty {
+.nav-hover:hover {
     cursor: pointer;
     color: var(--color-complimentary);
 }

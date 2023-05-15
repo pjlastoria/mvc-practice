@@ -48,5 +48,8 @@ class CartItemContr extends CartContr
         return $product->getProduct($this->product_id);
     }
 
-
+    public function removeItem()
+    {
+        return $this->deleteItem($this->session_id, $this->product_id);
+    }
 }

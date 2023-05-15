@@ -11,7 +11,8 @@ html {
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 1800px;
 }
 
 select,

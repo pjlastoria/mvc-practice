@@ -135,6 +135,21 @@
 .item-container {
     border-bottom: solid 2px var(--color-bg);
     padding: 15px 0;
+    position: relative;
+}
+
+.item-qty {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    position: absolute;
+    background-color: var(--color-complimentary);
+    color: var(--color-primary);
+    border-radius: 50%;
+    text-align: center;
+    top: 5px;
+    left: 38px;
+    font-size: 12px;
 }
 
 .item-info {

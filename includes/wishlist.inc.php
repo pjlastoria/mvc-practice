@@ -5,14 +5,14 @@ include_once('autoloader.inc.php');
 if (isset($_POST['new']) && is_numeric($_POST['new'])) {
 
     session_start();
-    if (!isset($_SESSION['user_id'])) {
+    if (!isset($_SESSION['user']['id'])) {
         echo json_encode(array('msg' => 'notloggedin'));
         exit();
     }
 
     $session_id = session_id();
     $product_id = $_POST['product_id'];
-    $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['user']['id'];
 
     $now        = strtotime('-6 hour'); //EST timezone
     $timestamp  = date("Y-m-d H:i:s", $now);
@@ -36,7 +36,7 @@ if (isset($_POST['remove']) && is_numeric($_POST['remove'])) {
 
         $session_id = session_id();
         $product_id = intval($_POST['product_id']);
-        $user_id = intval($_SESSION['user_id']);
+        $user_id = intval($_SESSION['user']['id']);
 
         $now        = strtotime('-6 hour'); //EST timezone
         $timestamp  = date("Y-m-d H:i:s", $now);
@@ -46,4 +46,5 @@ if (isset($_POST['remove']) && is_numeric($_POST['remove'])) {
         $wish->removeItem();
 
         unset($_SESSION['wish_list'][$product_id]);
+        echo json_encode(['msg' => 'Item removed.']);
 }

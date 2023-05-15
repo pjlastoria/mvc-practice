@@ -18,4 +18,11 @@ class Cart extends Dbh {
         return $result;
     }
 
+    protected function deleteItem($session_id, $product_id)
+    {
+        $sql = "DELETE FROM cart_items WHERE session_id = ? AND product_id = ?";
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$session_id, $product_id]);
+    }
+
 }

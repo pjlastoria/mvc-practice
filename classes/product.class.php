@@ -32,7 +32,7 @@ class Product extends Dbh
         return $result;
     }
 
-    public function getWishlistProducts(int $user_id)
+    public function getWishlistProducts($user_id)
     {
         $sql = "SELECT * FROM products
                 LEFT JOIN wish_items
@@ -44,11 +44,11 @@ class Product extends Dbh
         return $result;
     }
 
-    public function updateProduct(int $id)
+    public function updateProduct(string $name, string $stripe_price)
     {
-        $sql = "SELECT * FROM products WHERE id = ?";
+        $sql = "UPDATE `products` SET `stripe_price_id`= ?  WHERE `name` = ?;";
         $stmt = $this->connect()->prepare($sql);
-        $stmt->execute([$id]);
+        $stmt->execute([$stripe_price, $name]);
         $result = $stmt->fetch();
         return $result;
     }

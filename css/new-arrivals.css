@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 30px;
-    
+
 }
 
 .new-arrivals h2 {
@@ -63,7 +63,7 @@
 
 .carousel-card:hover {
     cursor: pointer;
-    box-shadow: 0 0 5px 0 rgb(0,0,0,0.4);
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.4);
 }
 
 .carousel-img {
@@ -80,7 +80,26 @@
     object-fit: cover;
 }
 
-.add-to-wishlist, .remove-from-wishlist {
+.add-to-cart img, .remove-btn img {
+    width: 20px;
+    height: 20px;
+    display: none;
+    animation-name: addToCartLoader;
+    animation-duration: 2s;
+}
+
+@keyframes addToCartLoader {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.add-to-wishlist,
+.remove-from-wishlist {
     width: 40px;
     height: 40px;
     background-color: var(--color-bg);
@@ -97,7 +116,8 @@
     background-color: var(--color-complimentary);
 }
 
-.add-to-wishlist img, .remove-from-wishlist img {
+.add-to-wishlist img,
+.remove-from-wishlist img {
     width: 25px;
     height: 25px;
     top: 8px;
@@ -137,11 +157,12 @@
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    box-shadow: 0 0 5px 0 rgb(0,0,0,0.4);
+    box-shadow: 0 0 5px 0 rgb(0, 0, 0, 0.4);
     transition: 0.4s;
     opacity: 0;
 }
 
-.carousel-card:hover .carousel-btn, .carousel-card:hover .add-to-wishlist {
+.carousel-card:hover .carousel-btn,
+.carousel-card:hover .add-to-wishlist {
     opacity: 1;
 }

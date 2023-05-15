@@ -5,7 +5,7 @@
     height: 100vh;
 }
 
-.account-container {
+.account-container, .login-container {
     margin: 0 auto;
     width: 500px;
     height: 100%;
@@ -22,6 +22,9 @@
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 5px 0 rgb(0,0,0,0.4);
+}
+
+.login-container .login-form {
     top: 50%;
     transform: translateY(-50%);
     position: absolute;

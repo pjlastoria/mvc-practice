@@ -14,7 +14,9 @@ if (isset($_POST['signup']) && is_numeric($_POST['signup'])) {
     $userId = $user->signUp();
 
     session_start();
-    $_SESSION['user_id'] = $userId;
+    $_SESSION['user']['id']    = $userId;
+    $_SESSION['user']['email'] = $_POST['email'];
+    $_SESSION['wish_list'] = array();
 
     header('Location: ../?msg=accountcreated');
 
