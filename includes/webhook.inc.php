@@ -10,7 +10,7 @@ require_once 'order.inc.php';
 // If you are testing with the CLI, find the secret by running 'stripe listen'
 // If you are using an endpoint defined with the API or dashboard, look in your webhook settings
 // at https://dashboard.stripe.com/webhooks
-$endpoint_secret = 'whsec_fd10e04f0615bb078bde8fc9dcbd0c5f82ed0777ae6c56506f7da658128b12a6';
+$endpoint_secret = $_ENV['ENDPOINT_SECRET'];
 
 $payload = @file_get_contents('php://input');
 $event = null;
